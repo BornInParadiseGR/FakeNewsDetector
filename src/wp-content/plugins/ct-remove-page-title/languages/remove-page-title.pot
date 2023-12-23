@@ -1,0 +1,23 @@
+# Copyright (C) 2019 WP Answered
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Remove Page Title 1.0\n"
+"POT-Creation-Date: 2019-7-26 15:27:55+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: meta-box.php:10
+msgid "Remove Page Title"
+msgstr ""
+
+#: meta-box.php:12
+msgid "Remove Post Title"
+msgstr ""
+
+#: meta-box.php:34
+msgid "Remove the title"
+msgstr ""

@@ -1,0 +1,9 @@
+<!--  -->
+<div class="wfu-releasenotes-container">
+	<span><strong>Version 4.24.1</strong> is a regular update that verifies compatibility with <strong>Wordpress</strong> version 6.4.1 and it also fixes a minor security issue in the <strong>shortcode composer</strong>.<br /><br />Please note that the <strong>Professional</strong> version of the plugin introduces some significant changes, such as <strong>licensing</strong> and <strong>external extensions</strong>.
+	<br /><br />
+	For more details about this version's changes please visit the <strong>Release Notes</strong> of the plugin's </span>
+	<a href="http://www.iptanus.com/wordpress-plugins/wordpress-file-upload/">support page</a><span>.</span>
+</div>
+<!--  -->
+<!--  -->

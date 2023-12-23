@@ -1,0 +1,74 @@
+version: "3.9"
+services:
+  # Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./db-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data_volume:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - dockerwp_db
+      - dockerdb_fl
+  # # phpmyadmin
+  # phpmyadmin:
+  #   depends_on:
+  #     - db
+  #   image: phpmyadmin
+  #   restart: always
+  #   ports:
+  #     - "8080:80"
+  #   environment:
+  #     PMA_HOST: db
+  #     MYSQL_ROOT_PASSWORD: password
+  #   networks:
+  #     - dockerwp
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      #- wordpress_data_volume:/var/www/html
+      - ./src:/var/www/html
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - dockerwp_db
+      - dockerfl_wp
+  flask:
+        build: ./
+        image: panagiotis2020/myflask:0.1
+        depends_on:
+          - wordpress
+          - db
+        ports:
+          - "5000:5000"
+        restart: always
+        networks:
+        - dockerdb_fl
+        - dockerfl_wp
+networks:
+  dockerwp_db:
+  dockerfl_wp:
+  dockerdb_fl:
+volumes:
+  db_data_volume: {}
+  #wordpress_data_volume: {}
+
+
+
+  
+
+        
