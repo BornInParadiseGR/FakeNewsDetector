@@ -8,6 +8,6 @@ pickle4
 requests
 Flask-Cors
 DateTime
-mysql-connector-python
+mysql-connector==2.2.9
 validators
 pybase64
